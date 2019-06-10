@@ -1,0 +1,7 @@
+{    
+    "success":true,
+    "data":{
+        "login":true,
+        "errorType":"error1"
+    }
+}
