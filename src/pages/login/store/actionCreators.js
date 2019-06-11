@@ -18,3 +18,80 @@ export const loginAction = (data)=>({
     login:fromJS(data.login),
     errorType:fromJS(data.errorType)
 })
+export const groupRegister=()=>({
+    type:actionTypes.GROUPREGISTER
+})
+export const teacherRegister=()=>({
+    type:actionTypes.TEACHERREGISTER
+})
+export const studentRegister=()=>({
+    type:actionTypes.STUDENTREGISTER
+})
+export const changeBzm=(data)=>({
+    type:actionTypes.CHANGEBZM,
+    data:data
+})
+export const changeJyly=(data)=>({
+    type:actionTypes.CHANGEJYLY,
+    data:data
+})
+export const changeDmdz=(data)=>({
+    type:actionTypes.CHANGEDMDZ,
+    data:data
+})
+export const changeXxdz=(data)=>({
+    type:actionTypes.CHANGEXXDZ,
+    data:data
+})
+export const changeLxfs=(data)=>({
+    type:actionTypes.CHANGELXFS,
+    data:data
+})
+export const changeJysll=(data)=>({
+    type:actionTypes.CHANGEJYSLL,
+    data:data
+})
+export const changeJyslh=(data)=>({
+    type:actionTypes.CHANGEJYSLH,
+    data:data
+})
+export const changeJj=(data)=>({
+    type:actionTypes.CHANGEJJ,
+    data:data
+})
+export const changeName=(data)=>({
+    type:actionTypes.CHANGENAME,
+    data:data
+})
+export const changeAge=(data)=>({
+    type:actionTypes.CHANGEAGE,
+    data:data
+})
+export const changeSex=(data)=>({
+    type:actionTypes.CHANGESEX,
+    data:data
+})
+export const changeCjnx=(data)=>({
+    type:actionTypes.CHANGECJNX,
+    data:data
+})
+export const changeSfzh=(data)=>({
+    type:actionTypes.CHANGESFZH,
+    data:data
+})
+export const changeParentName=(data)=>({
+    type:actionTypes.CHANGEPARENTNAME,
+    data:data
+})
+export const changeXkyx=(data)=>({
+    type:actionTypes.CHANGEXKYX,
+    data:data
+})
+export const changeDPassword=(data)=>({
+    type:actionTypes.CHANGEDPASSWORD,
+    data:data
+})
+export const changePhoneNumber=(data)=>({
+    type:actionTypes.CHANGEPHONENUMBER,
+    data:data
+})
