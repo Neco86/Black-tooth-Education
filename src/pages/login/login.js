@@ -3,7 +3,7 @@ import { Wrapper,Input,InputWrapper,Button } from './style.js'
 import Logo from '../../statics/logo.png'
 import { connect } from 'react-redux'
 import { actionCreators }   from './store'
- import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 class Login extends PureComponent{
 render(){
         const { login,loginType,username,password,handleLogin,handleUserName,handelPassword } =this.props;

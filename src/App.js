@@ -14,6 +14,7 @@ import Next from './pages/login/next'
 import Finish from './pages/login/finish'
 import ShowError from './common/error'
 import Home from './pages/home'
+import News from './pages/news'
 class App extends Component {
   render() {
     return (
@@ -31,6 +32,7 @@ class App extends Component {
             <Route path='/register/next/:type' exact component={Next}></Route>
             <Route path='/register/finish/:type' exact component={Finish}></Route>
             <Route path='/home' exact component={Home}></Route>
+            <Route path='/home/news/:itemKey' exact component={News}></Route>
         </BrowserRouter>
     </Provider>
     )

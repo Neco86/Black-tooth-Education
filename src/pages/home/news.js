@@ -1,18 +1,27 @@
 import React,{ PureComponent } from 'react'
 import NewsItem from './components/NewsItem'
+import { connect } from 'react-redux'
 class News extends PureComponent{
     render(){
+        const { newsItemList } = this.props;
              return(
-                <>
-                    <NewsItem dec="5G前线|华为手机产品线总裁亲测5G速率:下载超1Gbps" img="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"/>
-                    <NewsItem dec="5G前线|华为手机产品线总裁亲测5G速率:下载超1Gbps" img="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"/>
-                    <NewsItem dec="5G前线|华为手机产品线总裁亲测5G速率:下载超1Gbps" img="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"/>
-                    <NewsItem dec="5G前线|华为手机产品线总裁亲测5G速率:下载超1Gbps" img="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"/>
-                    <NewsItem dec="5G前线|华为手机产品线总裁亲测5G速率:下载超1Gbps" img="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"/>
-                    <NewsItem dec="5G前线|华为手机产品线总裁亲测5G速率:下载超1Gbps" img="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"/>
-                </>
+                <div>
+                    {newsItemList.map((item,index) => {
+                        return <NewsItem 
+                                dec={item.get('dec')} 
+                                img={item.get('img')}
+                                itemKey={item.get('key')}
+                                key={item.get('key')}
+                                />
+                    })}
+                </div>
             )
        
     }
 }
-export default News
+const mapStateToProps=(state)=>{
+    return {
+        newsItemList:state.getIn(['home','newsItemList'])
+    }
+    }
+export default connect(mapStateToProps,null)(News);

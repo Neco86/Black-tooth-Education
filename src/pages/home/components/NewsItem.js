@@ -1,19 +1,21 @@
 import React,{ PureComponent } from 'react'
 import { NewsItemWrapper } from './style'
+import { withRouter } from "react-router-dom";
 
 class NewsItem extends PureComponent{
 render(){
+        const { dec,img,itemKey }=this.props;
          return(
-            <NewsItemWrapper>
+            <NewsItemWrapper onClick={()=>{this.props.history.push('/home/news/'+itemKey)}}>
                 <div className="dec">
-                    {this.props.dec}
+                    {dec}
                 </div>
                 <div className='img'>
-                    <img src={this.props.img} alt=""/>
+                    <img src={img} alt=""/>
                 </div>
             </NewsItemWrapper>
         )
    
 }
 }
-export default NewsItem
+export default withRouter(NewsItem);
