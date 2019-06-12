@@ -4,15 +4,9 @@ import Page1  from '../page1'
 import Page2 from '../page2'
 import Page3 from '../page3'
 import Page4 from '../page4'
+import { connect } from 'react-redux'
+import { actionCreators }   from '../store'
 class TabBars extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-          selectedTab: 'yellowTab',
-          hidden: false,
-          fullScreen: true,
-        };
-    }
     renderContent(pageText) {
         return (
           pageText==='page1'?<Page1/>:
@@ -22,9 +16,10 @@ class TabBars extends Component{
         );
       }
     render(){
+      const { selectedTab,setBlueTab,setRedTab,setGreenTab,setYellowTab } =this.props;
              return(
-                <>
-                   <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
+                <div>
+                   <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
                         <TabBar
                           unselectedTintColor="#949494"
                           tintColor="#cc99ff"
@@ -53,12 +48,8 @@ class TabBars extends Component{
                                 }}
                                 >&#xe61a;</i> 
                             }
-                            selected={this.state.selectedTab === 'blueTab'}
-                            onPress={() => {
-                              this.setState({
-                                selectedTab: 'blueTab',
-                              });
-                            }}
+                            selected={selectedTab === 'blueTab'}
+                            onPress={() => {setBlueTab()}}
                           >
                             {this.renderContent('page1')}
                           </TabBar.Item>
@@ -85,11 +76,9 @@ class TabBars extends Component{
                             }
                             title="试听申请"
                             key="page2"
-                            selected={this.state.selectedTab === 'redTab'}
+                            selected={selectedTab === 'redTab'}
                             onPress={() => {
-                              this.setState({
-                                selectedTab: 'redTab',
-                              });
+                            setRedTab()
                             }}
                           >
                             {this.renderContent('page2')}
@@ -117,11 +106,9 @@ class TabBars extends Component{
                             }
                             title="课程"
                             key="page3"
-                            selected={this.state.selectedTab === 'greenTab'}
+                            selected={selectedTab === 'greenTab'}
                             onPress={() => {
-                              this.setState({
-                                selectedTab: 'greenTab',
-                              });
+                              setGreenTab()
                             }}
                           >
                             {this.renderContent('page3')}
@@ -149,20 +136,39 @@ class TabBars extends Component{
                             }
                             title="我的"
                             key="page4"
-                            selected={this.state.selectedTab === 'yellowTab'}
+                            selected={selectedTab === 'yellowTab'}
                             onPress={() => {
-                              this.setState({
-                                selectedTab: 'yellowTab',
-                              });
+                              setYellowTab()
                             }}
                           >
                             {this.renderContent('page4')}
                           </TabBar.Item>
                         </TabBar>
                       </div>
-                </>
+                </div>
             )
    
+    }
 }
+const mapDispatchToProps=(dispatch)=>{
+    return {
+            setBlueTab(){
+              dispatch(actionCreators.setBlueTab())
+              },
+            setRedTab(){
+              dispatch(actionCreators.setRedTab())
+              },
+            setGreenTab(){
+              dispatch(actionCreators.setGreenTab())
+              },
+            setYellowTab(){
+              dispatch(actionCreators.setYellowTab())
+              },
+        }
 }
-export default TabBars
+const mapStateToProps=(state)=>{
+    return {
+        selectedTab:state.getIn(['home','tabBarPage']),
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(TabBars);
