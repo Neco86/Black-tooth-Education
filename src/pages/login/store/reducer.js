@@ -5,7 +5,7 @@ const defaultState=fromJS({
     login:false,
     username:'',
     password:'',
-    errorType:"",//error1,error2,error3,error4
+    loginType:"",//error1,error2,error3,error4,type1,type2
     registerType:'',//group,teacher,student
     //group
     bzm:'',//标识码
