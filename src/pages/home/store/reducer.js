@@ -2,7 +2,8 @@ import * as actionTypes from './actionTypes'
 const { fromJS } = require('immutable')
 const defaultState=fromJS({
     tabPage:0,//0 1
-    tabBarPage:"greenTab"//blueTab redTab greenTab yellowTab
+    tabBarPage:"blueTab"//blueTab redTab greenTab yellowTab
+
 })
 
 export default (state=defaultState,action)=>{
