@@ -15,6 +15,7 @@ import Finish from './pages/login/finish'
 import ShowError from './common/error'
 import Home from './pages/home'
 import News from './pages/news'
+import Videos from './pages/videos'
 class App extends Component {
   render() {
     return (
@@ -33,6 +34,7 @@ class App extends Component {
             <Route path='/register/finish/:type' exact component={Finish}></Route>
             <Route path='/home' exact component={Home}></Route>
             <Route path='/home/news/:itemKey' exact component={News}></Route>
+            <Route path='/home/video/:itemKey' exact component={Videos}></Route>
         </BrowserRouter>
     </Provider>
     )

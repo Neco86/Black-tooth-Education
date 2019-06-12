@@ -1,40 +1,30 @@
 import React,{ PureComponent } from 'react'
 import VideoItem from './components/VideoItem'
+import { connect } from 'react-redux'
 class Video extends PureComponent{
     render(){
+            const { videoItemList } = this.props;
              return(
-                <>
-                    <VideoItem 
-                    videoPic="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"
-                    photoPic="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"
-                    name="发布者"
-                    like='123'
-                    comment='64'
-                    />
-                    <VideoItem 
-                    videoPic="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"
-                    photoPic="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"
-                    name="发布者"
-                    like='123'
-                    comment='64'
-                    />
-                    <VideoItem 
-                    videoPic="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"
-                    photoPic="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"
-                    name="发布者"
-                    like='123'
-                    comment='64'
-                    />
-                    <VideoItem 
-                    videoPic="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"
-                    photoPic="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg"
-                    name="发布者"
-                    like='123'
-                    comment='64'
-                    />
-                </>
+                <div>
+                    {videoItemList.map((item,index) => {
+                        return <VideoItem 
+                                videoPic={item.get('videoPic')} 
+                                photoPic={item.get('photoPic')}
+                                name={item.get('name')}
+                                like={item.get('like')}
+                                comment={item.get('comment')}
+                                itemKey={item.get('key')}
+                                key={item.get('key')}
+                                />
+                    })}
+                </div>
             )
        
     }
 }
-export default Video
+const mapStateToProps=(state)=>{
+    return {
+        videoItemList:state.getIn(['home','videoItemList'])
+    }
+    }
+export default connect(mapStateToProps,null)(Video);
