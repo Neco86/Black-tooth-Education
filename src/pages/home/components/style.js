@@ -175,3 +175,26 @@ export const UserWrapper=styled.div`
         top:-18px;
     }
 `
+export const Tab2Wrapper = styled.div`
+    height:100%;
+    overflow:hidden;
+    padding-top:55px;
+    .am-tabs-default-bar-tab-active{
+        color:#cc99ff;
+    }
+    .am-tabs-default-bar-underline{
+        border:1px solid #cc99ff;
+    }
+    .am-tabs-default-bar-left .am-tabs-default-bar-content, .am-tabs-default-bar-right .am-tabs-default-bar-content{
+        height:300px;
+    }
+`
+export const ClassItem = styled.div`
+    height:35px;
+    width:100px;
+    float:left;
+    margin:15px;
+    line-height:35px;
+    text-align:center;
+    background-color:#f9f9f9;
+`
