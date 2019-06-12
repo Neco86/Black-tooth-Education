@@ -16,7 +16,7 @@ export const login = (username,password)=>({
 export const loginAction = (data)=>({
     type:actionTypes.HANDLELOGN,
     login:fromJS(data.login),
-    errorType:fromJS(data.errorType)
+    loginType:fromJS(data.loginType)
 })
 export const groupRegister=()=>({
     type:actionTypes.GROUPREGISTER

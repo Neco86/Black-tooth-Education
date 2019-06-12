@@ -6,7 +6,7 @@ import { actionCreators }   from './store'
  import { Redirect } from 'react-router-dom'
 class Login extends PureComponent{
 render(){
-        const { login,errorType,username,password,handleLogin,handleUserName,handelPassword } =this.props;
+        const { login,loginType,username,password,handleLogin,handleUserName,handelPassword } =this.props;
         return !login?(
             <Wrapper>
                 <img src={Logo} alt=""/>
@@ -15,10 +15,10 @@ render(){
                     <Input type="password" placeholder='请输入密码' value={password} onChange={(e)=>{handelPassword(e)}}/>
                 </InputWrapper>
                 <Button className='login' onClick={()=>{handleLogin(username,password)}}>登录</Button>
-                {errorType==="error1"?<Redirect to='/error/type1'/>:null}
-                {errorType==="error2"?<Redirect to='/error/type2'/>:null}
-                {errorType==="error3"?<Redirect to='/error/type3'/>:null}
-                {errorType==="error4"?<Redirect to='/error/type4'/>:null}
+                {loginType==="error1"?<Redirect to='/error/type1'/>:null}
+                {loginType==="error2"?<Redirect to='/error/type2'/>:null}
+                {loginType==="error3"?<Redirect to='/error/type3'/>:null}
+                {loginType==="error4"?<Redirect to='/error/type4'/>:null}
             </Wrapper>
             ):<Redirect to='/home'/>
 }
@@ -41,7 +41,7 @@ const mapStateToProps=(state)=>{
         login:state.getIn(['login','login']),
         username:state.getIn(['login','username']),
         password:state.getIn(['login','password']),
-        errorType:state.getIn(['login','errorType'])
+        loginType:state.getIn(['login','loginType'])
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Login);
