@@ -33,3 +33,17 @@ export const Item = styled.div`
         transform:rotate(180deg);
     }
 `
+export const Button = styled.div`
+    color:#cd99ff;
+    position:fixed;
+    right:30px;
+    i{
+        font-size:50px;
+    }
+    &.manage{
+        bottom:140px;
+    }
+    &.add{
+        bottom:80px;
+    }
+`  
