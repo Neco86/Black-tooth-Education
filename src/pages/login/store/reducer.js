@@ -50,9 +50,9 @@ export default (state=defaultState,action)=>{
         case actionTypes.LOGIN_CHANGE_PASSWPRD:
             return state.set('password',action.data)
         case actionTypes.HANDLELOGN:
-            return state.merge({login:action.login,errorType:action.errorType})
+            return state.merge({login:action.login,loginType:action.loginType})
         case LOGIN_BACK:
-            return state.set('errorType',"")
+            return state.set('loginType',"")
         case actionTypes.GROUPREGISTER:
             return state.set('registerType','group')
         case actionTypes.TEACHERREGISTER:
