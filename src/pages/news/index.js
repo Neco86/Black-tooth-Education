@@ -37,7 +37,7 @@ render(){
                 </Comment>
                 <Bottom>
                     <input type='text' placeholder='我来说两句'/>
-                    <i className='iconfont'>&#xe606;</i>
+                    <i className='iconfont'>&#xe607;</i>
                 </Bottom>
                 {/*this.props.match.params.itemKey*/}
             </div>

@@ -1,10 +1,12 @@
 import React,{ PureComponent } from 'react'
 import { VideoWrapper } from './style'
+import { withRouter } from "react-router-dom";
 class VideoItem extends PureComponent{
 render(){
+        const { itemKey }=this.props;
          return(
             <VideoWrapper>
-                <div className='video'>
+                <div className='video' onClick={()=>{this.props.history.push('/home/video/'+itemKey)}}>
                     <img src={this.props.videoPic} alt=""/>
                     <i className="iconfont">&#xe640;</i>
                 </div>
@@ -25,4 +27,4 @@ render(){
    
 }
 }
-export default VideoItem
+export default withRouter(VideoItem);

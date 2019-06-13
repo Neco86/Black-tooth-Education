@@ -21,11 +21,11 @@ export const NewsItem = styled.div`
         text-indent:2em;
         line-height:16px;
     } 
+    margin-bottom:5px;
 `
 export const Comment = styled.div`
     padding:15px 20px;
     background-color:white;
-    margin-top:5px;
     .commentTitle{
         font-size:16px;
         margin:10px 0;
@@ -43,6 +43,7 @@ export const Comment = styled.div`
     .comment{
         margin:5px 0;
         font-size:13px;
+        margin-bottom:15px;
     }
     margin-bottom:45px;
 `
