@@ -2,6 +2,6 @@
     "success":true,
     "data":{
         "login":true,
-        "loginType":"type1"
+        "loginType":"type2"
     }
 }

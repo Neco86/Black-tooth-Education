@@ -57,13 +57,14 @@ export const Header=styled.div`
     position:absolute;
 `
 export const Page6Header=styled.div`
-    height:35px;
+    height:40px;
     width:100%;
     line-height:35px;
     font-size:14px;
     text-align:center;
     background-color:white;
     margin-bottom:5px;
+    overflow:hidden;
 `
 export const Time = styled.div`
     height:65px;
@@ -71,6 +72,7 @@ export const Time = styled.div`
     background-color:white;
     margin-bottom:5px;
     padding:10px 15px;
+    box-sizing:border-box;
     .time{
         font-size:16px;
     }
@@ -88,6 +90,7 @@ export const ClassItem = styled.div`
     width:100%;
     background-color:white;
     padding:20px 10px; 
+    box-sizing:border-box;
     img{
         width:150px;
         height:75px;

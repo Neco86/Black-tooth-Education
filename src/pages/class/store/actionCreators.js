@@ -1,11 +1,11 @@
-// import * as actionTypes from './actionTypes'
+import * as actionTypes from './actionTypes'
 // // const { fromJS } = require('immutable')
-// export const handleBackVideos = ()=>({
-//     type:actionTypes.BACKVIDEOS,
-// })
-// export const changeFirst = ()=>({
-//     type:actionTypes.CHANGEFIRST,
-// })
-// export const changeSecond = ()=>({
-//     type:actionTypes.CHANGESECOND,
-// })
+export const handleAddClass = ()=>({
+    type:actionTypes.HANDLEADDCLASS,
+})
+export const addClassBack = ()=>({
+    type:actionTypes.ADDCLASSBACK,
+})
+export const handleManageClass = ()=>({
+    type:actionTypes.MANAGECLASS,
+})

@@ -1,15 +1,21 @@
 import * as actionTypes from './actionTypes'
+import { CLASSMANAGEBACK } from '../../classManage/store/actionTypes'
 const { fromJS } = require('immutable')
 const defaultState=fromJS({
-    addClass:false
+    addClass:false,
+    manage:false
 })
 
 export default (state=defaultState,action)=>{
     switch (action.type){
-        case actionTypes.CHANGEFIRST:
-            return state.set('tabPage',0)
-        case actionTypes.CHANGESECOND:
-            return state.set('tabPage',1)
+        case actionTypes.HANDLEADDCLASS:
+            return state.set('addClass',true)
+        case actionTypes.ADDCLASSBACK:
+            return state.set('addClass',false)
+        case actionTypes.MANAGECLASS:
+            return state.set('manage',true)
+        case CLASSMANAGEBACK:
+            return state.set('manage',false)
         default: 
             return state
     }

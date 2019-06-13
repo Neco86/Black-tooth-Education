@@ -16,6 +16,11 @@ import ShowError from './common/error'
 import Home from './pages/home'
 import News from './pages/news'
 import Videos from './pages/videos'
+import AddClass from './pages/class'
+import ChangeClass from './pages/classChange'
+import ClassPan from './pages/classPlan'
+import ManageClass from './pages/classManage'
+
 class App extends Component {
   render() {
     return (
@@ -35,6 +40,10 @@ class App extends Component {
             <Route path='/home' exact component={Home}></Route>
             <Route path='/home/news/:itemKey' exact component={News}></Route>
             <Route path='/home/video/:itemKey' exact component={Videos}></Route>
+            <Route path='/home/addClass' exact component={AddClass}></Route>
+            <Route path='/home/classChange/:itemKey' exact component={ChangeClass}></Route>
+            <Route path='/home/classPlan/:itemKey' exact component={ClassPan}></Route>
+            <Route path='/home/manageClass' exact component={ManageClass}></Route>
         </BrowserRouter>
     </Provider>
     )

@@ -1,3 +1,3 @@
-// export const BACKVIDEOS='home/video/back'
-// export const CHANGEFIRST='home/video/changeFirst'
-// export const CHANGESECOND='home/video/changeSecond'
+export const HANDLEADDCLASS='home/page3/handleAddClass'
+export const MANAGECLASS='home/page3/manageClass'
+export const ADDCLASSBACK='home/page3/addClassBack'

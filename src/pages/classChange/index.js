@@ -1,19 +1,19 @@
 import React,{ PureComponent } from 'react'
 import { Wrapper } from '../../common/style'
 import { connect } from 'react-redux'
-import { actionCreators } from './store'
+// import { actionCreators } from './store'
 import { InputItem,PickerView,TextareaItem } from 'antd-mobile';
 import { RegisterWrapper,AddressWrapper,IntroWrapper } from '../login/style'
 import { province } from '../login/province'
-import { Button } from './style'
-class AddClass extends PureComponent{
+import { Button,ButtonWrapper } from './style'
+class ChangeClass extends PureComponent{
 render(){
-    const { addClassBack,history } = this.props;
+    const { history,addClassBack } = this.props;
          return(
             <div>
                 <Wrapper>
                     <i className='iconfont' onClick={()=>{addClassBack(history)}}>&#xe646;</i>
-                    <span>添加课程</span>
+                    <span>课程信息修改</span>
                 </Wrapper>
                 <RegisterWrapper>
                     <InputItem placeholder='xxxxx'>课程名称:</InputItem>
@@ -36,7 +36,10 @@ render(){
                         </div>
                     </IntroWrapper>
                 </RegisterWrapper>
-                <Button>完成添加</Button>
+                <ButtonWrapper>
+                    <Button>完成添加</Button>
+                    <Button className='delete'>删除课程</Button>
+                </ButtonWrapper>
             </div>
         )
    
@@ -45,7 +48,7 @@ render(){
 const mapDispatchToProps=(dispatch)=>{
             return {
                 addClassBack(history){
-                    dispatch(actionCreators.addClassBack())
+                    // dispatch(actionCreators.addClassBack())
                     history.push('/home')
                 }
             }
@@ -56,4 +59,4 @@ const mapStateToProps=(state)=>{
         // addClass:state.getIn(['class','addClass']),
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(AddClass);
+export default connect(mapStateToProps,mapDispatchToProps)(ChangeClass);

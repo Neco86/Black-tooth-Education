@@ -1,6 +1,8 @@
 import * as actionTypes from './actionTypes'
 import { BACKNEWS } from '../../news/store/actionTypes'
 import { BACKVIDEOS } from '../../videos/store/actionTypes'
+import { ADDCLASSBACK } from '../../class/store/actionTypes'
+import { CLASSMANAGEBACK } from '../../classManage/store/actionTypes'
 const { fromJS } = require('immutable')
 const defaultState=fromJS({
     tabPage:0,//0 1
@@ -70,6 +72,10 @@ export default (state=defaultState,action)=>{
             return state.set('tabPage',0)
         case BACKVIDEOS:
             return state.set('tabPage',1)
+        case ADDCLASSBACK:
+            return state.set('tabBarPage','greenTab')
+        case CLASSMANAGEBACK:
+            return state.set('tabBarPage','greenTab')
         default: 
             return state
     }
