@@ -1,6 +1,8 @@
 import React,{ PureComponent } from 'react'
 import { Tabs } from 'antd-mobile'
 import { Tab2Wrapper,ClassItem } from './style'
+import { withRouter } from "react-router-dom";
+
 class Tab2 extends PureComponent{
 render(){
     const tabs = [
@@ -16,7 +18,7 @@ render(){
                   tabDirection="vertical"
                 >
                   <div style={{height: '100%',width: '100%', backgroundColor: '#fff' }}>
-                    <ClassItem>数学</ClassItem>
+                    <ClassItem onClick={()=>{this.props.history.push('/home/classify/小学数学')}}>数学</ClassItem>
                     <ClassItem>数学</ClassItem>
                     <ClassItem>数学</ClassItem>
                     <ClassItem>数学</ClassItem>
@@ -42,4 +44,4 @@ render(){
    
 }
 }
-export default Tab2;
+export default withRouter(Tab2);
