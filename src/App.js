@@ -20,6 +20,9 @@ import AddClass from './pages/class'
 import ChangeClass from './pages/classChange'
 import ClassPan from './pages/classPlan'
 import ManageClass from './pages/classManage'
+import MyChange from './pages/myChange'
+import MyChangeNext from './pages/myChange/next.js'
+import MyPub from './pages/myPub'
 
 class App extends Component {
   render() {
@@ -44,6 +47,9 @@ class App extends Component {
             <Route path='/home/classChange/:itemKey' exact component={ChangeClass}></Route>
             <Route path='/home/classPlan/:itemKey' exact component={ClassPan}></Route>
             <Route path='/home/manageClass' exact component={ManageClass}></Route>
+            <Route path='/home/myChange' exact component={MyChange}></Route>
+            <Route path='/home/myChange/next' exact component={MyChangeNext}></Route>
+            <Route path='/home/myPub' exact component={MyPub}></Route>
         </BrowserRouter>
     </Provider>
     )
