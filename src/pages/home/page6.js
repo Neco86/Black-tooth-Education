@@ -1,10 +1,12 @@
 import React,{ PureComponent } from 'react'
 import { Page6Header,Time,ClassItem } from './style'
 import { Picker,List } from 'antd-mobile';
-
+import { withRouter } from "react-router-dom";
+import { connect } from 'react-redux'
+// import { actionCreators } from './store'
 class Page6 extends PureComponent{
     getTime(){
-        return "2019/6/5(今日)"
+        return "2019/6/5"
     }
     render(){
         const seasons = [
@@ -39,6 +41,7 @@ class Page6 extends PureComponent{
             },
           ]
         ];
+        const { handleClassClick } = this.props;
              return(
                 <div>
                     <Page6Header>
@@ -57,7 +60,7 @@ class Page6 extends PureComponent{
                         {/*<div className='time'>{this.getTime()}</div>*/}
                         <div className="class">共有<span>1</span>节课</div>
                     </Time>
-                    <ClassItem>
+                    <ClassItem onClick={()=>{handleClassClick(this.props.history)}}>
                         <img src="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1887225900.jpg" alt=""/>
                         <div className="des">
                             <div className='title'>小学一年级数学</div>
@@ -70,4 +73,16 @@ class Page6 extends PureComponent{
        
     }
 }
-export default Page6
+const mapDispatchToProps=(dispatch)=>{
+      return {
+          handleClassClick(history){
+              history.push('/home/classDetail/小学数学1')
+          }
+      }
+}
+const mapStateToProps=(state)=>{
+    return {
+        // apply:state.getIn(['classDetail','apply']),
+    }
+}
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Page6));

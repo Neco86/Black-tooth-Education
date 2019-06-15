@@ -5,6 +5,7 @@ import { reducer as newsReducer } from '../pages/news/store'
 import { reducer as videosReducer } from '../pages/videos/store'
 import { reducer as classReducer } from '../pages/class/store'
 import { reducer as myPubReducer } from '../pages/myPub/store'
+import { reducer as classDetailReducer } from '../pages/classDetail/store'
 
 const reducer = combineReducers({
     login:loginReducer,
@@ -12,6 +13,7 @@ const reducer = combineReducers({
     news:newsReducer,
     videos:videosReducer,
     class:classReducer,
-    myPub:myPubReducer
+    myPub:myPubReducer,
+    classDetail:classDetailReducer
 })
 export default reducer
