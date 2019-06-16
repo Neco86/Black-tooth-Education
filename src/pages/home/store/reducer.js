@@ -6,7 +6,7 @@ import { CLASSMANAGEBACK } from '../../classManage/store/actionTypes'
 const { fromJS } = require('immutable')
 const defaultState=fromJS({
     tabPage:0,//0 1
-    tabBarPage:"redTab",//blueTab redTab greenTab yellowTab
+    tabBarPage:"yellowTab",//blueTab redTab greenTab yellowTab
     newsItemList:[
         {key:1,
         dec:"1 5G前线|华为手机产品线总裁亲测5G速率:下载超1Gbps",

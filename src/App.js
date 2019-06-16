@@ -25,6 +25,7 @@ import MyChangeNext from './pages/myChange/next.js'
 import MyPub from './pages/myPub'
 import Classify from './pages/classify'
 import ClassDetail from './pages/classDetail'
+import UserMy from './pages/userMy'
 
 class App extends Component {
   render() {
@@ -54,6 +55,7 @@ class App extends Component {
             <Route path='/home/myPub' exact component={MyPub}></Route>
             <Route path='/home/classify/:type' exact component={Classify}></Route>
             <Route path='/home/classDetail/:itemKey' exact component={ClassDetail}></Route>
+            <Route path='/home/my/:type' exact component={UserMy}></Route>
         </BrowserRouter>
     </Provider>
     )
