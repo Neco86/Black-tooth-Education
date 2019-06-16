@@ -5,7 +5,8 @@ const defaultState=fromJS({
     buy:false,
     bought:false,
     scored:false,
-    scoreType:''
+    scoreType:'',
+    classSchema:false
 })
 
 export default (state=defaultState,action)=>{
@@ -32,6 +33,10 @@ export default (state=defaultState,action)=>{
             return state.set('scoreType','type2')
         case actionTypes.HANDLETYPE3:
             return state.set('scoreType','type3')
+        case actionTypes.SHOWSCHEMA:
+            return state.set('classSchema',true)
+        case actionTypes.CLOSESCHEMA:
+            return state.set('classSchema',false)
         default: 
             return state
     }

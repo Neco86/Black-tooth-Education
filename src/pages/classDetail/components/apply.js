@@ -5,7 +5,7 @@ import NavBar from '../../../common/navbar'
 import { ItemWrapper,Button,ButtonWrapper } from '../style'
 import { connect } from 'react-redux'
 import { actionCreators } from '../store'
-
+import Schema from './schema'
 class Apply extends PureComponent{
 render(){
         const classItem={
@@ -17,8 +17,8 @@ render(){
           pub:'xxxxx',
           short:'xxx',
           applyed:false,//是否申请试听      
-          heared:true,  //是否已经试听   
-          bought:true   //是否已经购买
+          heared:false,  //是否已经试听   
+          bought:false   //是否已经购买
           //000 试听申请 报名缴费
           //001 试听申请 课程安排
           //010 error 申请前 已试听
@@ -28,10 +28,11 @@ render(){
           //110 试听评价 报名缴费
           //111 试听评价 课程安排
         };
-        const { handleScore,handleApply,handleBuy,buy,scored } =this.props;
+        const { handleScore,handleApply,handleBuy,buy,scored,classSchema,showScheme } =this.props;
          return(
             <div>
-              <NavBar title='课程详情' to={'/home/classify/'+this.props.item}/>
+              {/*<NavBar title='课程详情' to={'/home/classify/'+this.props.item}/>*/}
+              <NavBar title='课程详情' to={'/home'}/>
               <ItemWrapper>
                 <div className='title'>{classItem.title}</div>
                 <div className='des'>
@@ -51,7 +52,7 @@ render(){
               </ItemWrapper>
               <ButtonWrapper>
                 <Button 
-                onClick={classItem.bought?()=>{}:classItem.heared?()=>{handleScore()}:()=>{handleApply()}}>
+                onClick={classItem.bought?()=>{showScheme()}:classItem.heared?()=>{handleScore()}:()=>{handleApply()}}>
                     {classItem.bought?'课程安排':
                     classItem.heared?'试听评价':
                     !classItem.applyed?'申请试听':
@@ -59,6 +60,7 @@ render(){
                 </Button>
                 {classItem.bought?null:
                 <Button onClick={()=>{handleBuy()}}>报名缴费</Button>}
+                {classSchema?<Schema/>:null}
               </ButtonWrapper>
               {buy?<Buy/>:null}
               {scored?<Scored/>:null}
@@ -77,6 +79,9 @@ const mapDispatchToProps=(dispatch)=>{
                 },
                 handleScore(){
                   dispatch(actionCreators.handleScore())
+                },
+                showScheme(){
+                    dispatch(actionCreators.showScheme())
                 }
             }
 }
@@ -84,6 +89,7 @@ const mapStateToProps=(state)=>{
     return {
         buy:state.getIn(['classDetail','buy']),
         scored:state.getIn(['classDetail','scored']),
+        classSchema:state.getIn(['classDetail','classSchema'])
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Apply);

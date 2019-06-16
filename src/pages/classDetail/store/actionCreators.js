@@ -33,3 +33,9 @@ export const handleType2 = ()=>({
 export const handleType3 = ()=>({
     type:actionTypes.HANDLETYPE3,
 })
+export const showScheme = ()=>({
+    type:actionTypes.SHOWSCHEMA,
+})
+export const closeSchema= ()=>({
+    type:actionTypes.CLOSESCHEMA
+})
