@@ -16,8 +16,8 @@ render(){
           good:'-',
           pub:'xxxxx',
           short:'xxx',
-          applyed:false,//是否申请试听      
-          heared:false,  //是否已经试听   
+          applyed:true,//是否申请试听      
+          heared:true,  //是否已经试听   
           bought:false   //是否已经购买
           //000 试听申请 报名缴费
           //001 试听申请 课程安排
